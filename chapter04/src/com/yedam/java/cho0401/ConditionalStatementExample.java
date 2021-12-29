@@ -48,7 +48,7 @@ public class ConditionalStatementExample {
 		// 1.0 (Math.randon() * 10 ) +1 < 11
 		// 1 <= (int)(Mat.random() * 10 ) +1 < 11
 
-		// 최소 1부터 n까지 정수 중에서 랜덤하게 값을 구하고 싶을때
+		// 최소 n부터 m개
 		// (int)(Math.randon() * m ) +n
 
 		int num = (int) (Math.random() * 6) + 1;
@@ -92,7 +92,7 @@ public class ConditionalStatementExample {
 			break;
 		}
 
-		//
+		//  n을 기점으로 m개 8부터 12개		
 		int time = (int) (Math.random() * 12) + 8;
 		System.out.println("[현재시각 : " + time + "시]");
 
