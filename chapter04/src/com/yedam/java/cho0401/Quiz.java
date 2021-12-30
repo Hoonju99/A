@@ -1,4 +1,4 @@
-package com.yedam.java.quiz;
+package com.yedam.java.cho0401;
 
 import java.util.Scanner;
 
