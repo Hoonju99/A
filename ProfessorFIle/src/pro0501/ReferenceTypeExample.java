@@ -1,4 +1,4 @@
-package  Pro0502;
+package  pro0501;
 
 public class ReferenceTypeExample {
 
