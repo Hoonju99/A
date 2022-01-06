@@ -62,7 +62,8 @@ public class Example02 {
 		
 			/*
 			
-			  문제2) 다음 코드와 실행 결과를 참고하여 추상 클래스 Calculator를 상속받는 Adder와 Subtracter 클래스를 작성하라.
+			  문제2) 다음 코드와 실행 결과를 참고하여 추상 클래스 Calculator를 
+			  상속받는 Adder와 Subtracter 클래스를 작성하라.
 			  		- abstract class Calculator {
 						protected int a, b;
 						abstract protected int calc();
@@ -85,8 +86,9 @@ public class Example02 {
 					정수 2개를 입력하세요 >> 3 5
 					계산된 값은 -2
 		*/
+			Adder ad = new Adder() ;
 		
-		
+			Subtracter sub = new Subtracter();
 		
 		
 		

@@ -13,6 +13,7 @@ abstract class Calculator {
 	abstract protected int calc();
 	
 	protected void input() {
+		
 	
 		Scanner scanner = new Scanner(System.in);
 		
@@ -22,11 +23,13 @@ abstract class Calculator {
 		
 		b = scanner.nextInt();
 		
+	}
 		
-		
-		
-		
-		
+		public void run() {
+			input();
+			int res = calc();
+			System.out.println("계산된 값은 " + res);
+		}
 		
 		
 		
@@ -39,4 +42,3 @@ abstract class Calculator {
 		
 	}
 	
-}
