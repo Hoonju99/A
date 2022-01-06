@@ -1,0 +1,27 @@
+package com.yedam.java.ch_01;
+
+public class Computer extends Calculator {
+
+	@Override
+	double areaCirle(double r) {
+		System.out.println("Computer의 areaCircle() 실행");
+		return Math.PI * r * r;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
