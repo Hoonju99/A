@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<meta charset="utf-8">
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+<p>Let AJAX change this text.</p>
+<input id="targetDt">
+<select id="nationCd">
+   <option value="">전체
+   <option value="K">국내
+   <option value="F">해외
+</select>
+<button type="button" onclick="loadDoc()">Change Content</button>
+<div id="demo"></div>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+     console.log("응답완료")
+     //객체 parse
+     let movie = JSON.parse(this.responseText)
+     let list = movie.boxOfficeResult.dailyBoxOfficeList;
+     
+     //영화제목만 모두출력
+     for(i=0; i<list.length; i++) {
+    document.getElementById("demo").innerHTML += list[i].movieNm + ":" + list[i].movieCd + "<br>";
+     }
+     
+    // for(mv of  )
+     
+  }
+  let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json";
+  let param = "key=f5eef3421c602c6cb7ea224104795888&targetDt="+targetDt.value;
+  xhttp.open("POST", url);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(param);
+  console.log("the end")
+}
+</script>
+
+</body>
+</html>

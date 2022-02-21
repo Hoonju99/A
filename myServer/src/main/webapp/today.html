@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>today.html</title>
+</head>
+<body>
+<button id="btnToday">현재일시는</button>
+<div id="result"></div>
+<script>
+btnToday.addEventListener("click", loadDt);
+function loadDt(){
+	const xhttp = new XMLHttpRequest();
+	xhttp.open("get", "TodayServ.do" + "name=홍길동&age=20")
+	xhttp.onload = function(){
+		result.innerHTML += this.responseText;
+	}
+	
+	xhttp.send()
+}
+</script>
+</body>
+</html>

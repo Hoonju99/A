@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        span { display : none;} 
+
+    </style>
+</head>
+<body>
+	<input id="txtBook"><button type="button" id="btnAdd">등록</button>
+    <p class="word">list</p><span>2000</span>
+    <p class="word">nice</p><span>3000</span>
+    <p class="word">good</p><span>5000</span>
+    <div><p class="word">very</p><span>1000</span></div>
+
+    <script>
+    document.body.addEventListener("click", function(){
+    	//if(event.target.nodeName == "P") {
+    	if(event.target.classList.contains("word")) {
+    		let parice = event.target.nextElementSibling.innerHTML;
+    		alert(price);
+    	}
+    });
+       
+        //사과,2000,333
+        btnAdd.addEventListener("click", function(){
+			let arr = txtBook.value.split(",")        
+        	let pnode = document.createElement("p") //<p></p>
+        	pnode.innerHTML = arr[0];
+        	pnode.classList.add("word")  	
+        	document.body.append(pnode)
+        	
+        	let snode = document.createElement("span") //<p></p>
+        	snode.innerHTML = arr[1];  	
+        	document.body.append(snode) 
+        	
+        		
+        });
+    </script>
+</body>
+</html>

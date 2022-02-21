@@ -21,23 +21,20 @@ public class KioskFrame {
 			
 			int menuNo = menuSelect();
 			
-			if(menuNo == 1) {
-				//아이디 만들기
-				
-			} else if (menuNo == 2) {
+			 if (menuNo == 1) {
 				//menu 등록
 				insertKiosk();
-			} else if (menuNo == 3) {
+			} else if (menuNo == 2) {
 				//menu 수정
 				updateKiosk();
-			} else if (menuNo == 4) {
+			} else if (menuNo == 3) {
 				//menu 삭제
 				deleteKioskNo();
-			} else if (menuNo == 5) {
+			} else if (menuNo == 4) {
 				//menu 전체조회 -> menuNo menuName price
 				selectAll();
 			} else if (menuNo == 9) {
-				
+				end();
 				break;
 			}
 		}
@@ -46,7 +43,7 @@ public class KioskFrame {
 	public void menuPrint() {
 		System.out.println();
 		System.out.println("======================================================");
-		System.out.println("1.ID생성 | 2.메뉴등록 | 3.메뉴수정 | 4.메뉴삭제 | 5.메뉴조회 | 9.종료");
+		System.out.println("1.메뉴등록 | 2.메뉴수정 | 3.메뉴삭제 | 4.메뉴조회 | 9.종료");
 		System.out.println("======================================================");
 		System.out.print("선택>");
 	}
@@ -117,6 +114,10 @@ public class KioskFrame {
 		System.out.println("메뉴넘버>");
 		int MenuNo = sc.nextInt();
 		return MenuNo;
+	}
+	
+	public void end() {
+		System.out.println("프로그램 종료");
 	}
 	
 }

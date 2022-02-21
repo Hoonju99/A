@@ -40,7 +40,7 @@ public class Kiosk {
 	}
 	@Override
 	public String toString() {
-		return "ID : " + id + "PW : " +  pw + "메뉴번호 : " + menuNo + "메뉴이름 : " + menuName + "가격 : " + price ;
+		return "메뉴번호 : " + menuNo + " " + "메뉴이름 : " + menuName + "" + "가격 : " + price ;
 	}
 	
 	

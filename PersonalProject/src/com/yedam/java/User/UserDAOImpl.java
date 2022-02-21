@@ -45,4 +45,29 @@ public class UserDAOImpl extends DAO implements UserDAO {
 		
 	}
 
+	@Override
+	public User selectOne(String id, String pw) {
+		User us = null;
+		try {
+			connect();
+			String select = "SELECT * FROM User WHERE id =? AND pw = ? ";
+			pstmt = conn.prepareStatement(select);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				us = new User();
+				
+				us.setId(rs.getString("id"));
+				us.setPw(rs.getString("pw"));
+			}	
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			disconnect();
+		}
+		
+		return us;
+	}
+
 }

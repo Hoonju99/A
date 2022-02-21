@@ -22,13 +22,11 @@ public class KioskDAOImpl extends DAO implements KioskDAO {
 		List<Kiosk> list = new ArrayList<>();
 		try {
 			connect();
-			String select = "SELECT * FROM kiosk ORDER BY id";
+			String select = "SELECT * FROM kiosk ORDER BY menu_no";
 			pstmt = conn.prepareStatement(select);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Kiosk kio = new Kiosk();
-				kio.setId(rs.getInt("id"));
-				kio.setPw(rs.getInt("pw"));
 				kio.setMenuNo(rs.getInt("menu_no"));
 				kio.setMenuName(rs.getString("menu_name"));
 				kio.setPrice(rs.getInt("price"));
@@ -49,17 +47,15 @@ public class KioskDAOImpl extends DAO implements KioskDAO {
 
 		try {
 			connect();
-			String insert = "INSERT INTO kiosk VALUES (?,?,?,?,?)";
+			String insert = "INSERT INTO kiosk VALUES (?,?,?)";
 			pstmt = conn.prepareStatement(insert);
-			pstmt.setInt(1, kiosk.getId());
-			pstmt.setInt(2, kiosk.getPw());
-			pstmt.setInt(3, kiosk.getMenuNo());
-			pstmt.setString(4, kiosk.getMenuName());
-			pstmt.setInt(5, kiosk.getPrice());
+			
+			pstmt.setInt(1, kiosk.getMenuNo());
+			pstmt.setString(2, kiosk.getMenuName());
+			pstmt.setInt(3, kiosk.getPrice());
 
 			int result = pstmt.executeUpdate();
-
-			System.out.println(result + "건이 등록되었습니다.");
+		System.out.println(result + "건이 등록되었습니다.");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
