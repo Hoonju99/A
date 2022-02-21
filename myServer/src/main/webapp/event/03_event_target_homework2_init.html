@@ -17,13 +17,24 @@
     <div data-price="2000"><p class="word">nice</p></div>
     <div data-price="2000"><p class="word">good</p></div>
     <div data-price="2000"><p class="word">very</p></div>
+    
 </div>
 
     <script>
         var plist = document.getElementsByClassName("word");
         for (temp of plist) {
- 
+        	temp.addEventListener("click", function(){
+        		const word = event.target.nextElementSibling.innerHTML
+        		alert(word);
+        	})
         }
+        
+        btnAdd.addEventListener("click", function(){
+        	let div = document.createElement("div");
+        	div.innerHTML =`<p class="price">${arr[0]}</p><span>${arr[1]}</span>`;
+        	div.add
+        	document.body.append(div)
+        });
     </script>
 </body>
 </html>
