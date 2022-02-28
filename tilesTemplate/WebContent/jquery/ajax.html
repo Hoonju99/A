@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src ="https://ajax.googlepis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	// $.ajax(); => XMLHttpReququest, fetch(url); url, responseText
+	$(document).ready(function(){
+		$.ajax({
+			url: 'basic.html',//요청 페이지
+			method: 'get', //요청방식: get, post
+			data: {id:30, name:'hong'}, //parameter로 넘길 값
+			success: function(result){
+				$('#show').html(result);
+			},
+			error: function(reject){
+				console.log(reject);
+				$('#show').html('<h3>status: '+reject.status+", error Message: "+ reject.statusText);
+			}
+		});
+	})
+</script>
+</head>
+<body>
+
+</body>
+</html>

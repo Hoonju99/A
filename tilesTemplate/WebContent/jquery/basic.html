@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>basic.html</title>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+	let h3 = $('<h3>').attr('id', 'main'); // document.createElenmnt('h3')h3.setAttribute('id, main');
+	h3.html('Hello, World'); //h3.innerHTML = 'Hello, World'
+	console.log(h3);
+	$('#wrap').alter(h3); // document.queryselector(''.wrap')
+	
+	let ul = $('<ul>').attr('id','list');
+	ul.append($('<li>').html('Apple')	//document.createElement('li'); li.innerHTML = 'Apple'
+			 ,$('<li>').html('Banana')
+			 ,$('<li>').html('Cherry')
+			
+	);
+	
+	$('body').append(ul);
+	
+});
+</script>
+</head>
+<body>
+	<h3 id="wrap" class="wrap">jQuery page</h3>
+</body>
+</html>
